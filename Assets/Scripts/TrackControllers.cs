@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -48,6 +49,11 @@ public class TrackControllers : MonoBehaviour
             return hit;
         }
         return new();
+    }
+
+    public Vector3 getRightOrientation()
+    {
+        return rightRot;
     }
 
     // Update is called once per frame

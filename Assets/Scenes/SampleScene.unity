@@ -6431,6 +6431,8 @@ GameObject:
   - component: {fileID: 1231329511}
   - component: {fileID: 1231329510}
   - component: {fileID: 1231329509}
+  - component: {fileID: 1231329513}
+  - component: {fileID: 1231329512}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -6544,9 +6546,38 @@ Transform:
   m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1886062004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1231329512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231329508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28044733819d4779a2f12535e43c8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeLight
+  button: {fileID: 0}
+  light: {fileID: 0}
+--- !u!114 &1231329513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231329508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28044733819d4779a2f12535e43c8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeLight
+  button: {fileID: 0}
+  light: {fileID: 0}
 --- !u!1 &1233811367
 GameObject:
   m_ObjectHideFlags: 0
@@ -6577,8 +6608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawning
   spawnButton: {fileID: -1644001223835636349, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  clearButton: {fileID: 5113088590926889233, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
   track: {fileID: 588098654}
-  spawnedObjects: []
 --- !u!4 &1233811369
 Transform:
   m_ObjectHideFlags: 0
@@ -7258,6 +7289,98 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435887141}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1463083472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463083474}
+  - component: {fileID: 1463083473}
+  m_Layer: 0
+  m_Name: Teleport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1463083473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463083472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0b844f4a3ff2d439a0fc75a1fac362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleport
+  xr: {fileID: 112409067379004787}
+  telButton: {fileID: -8514278639596572500, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+--- !u!4 &1463083474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463083472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.2308, y: 0, z: 3.76208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1886062003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886062004}
+  - component: {fileID: 1886062005}
+  m_Layer: 0
+  m_Name: ChangeLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1886062004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886062003}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.2308, y: -15, z: 3.76208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1231329511}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1886062005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886062003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28044733819d4779a2f12535e43c8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeLight
+  button: {fileID: 5113088590926889233, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  light: {fileID: 1231329510}
 --- !u!1 &1920256824
 GameObject:
   m_ObjectHideFlags: 0
@@ -16115,3 +16238,4 @@ SceneRoots:
   - {fileID: 602471788}
   - {fileID: 1233811369}
   - {fileID: 1920256825}
+  - {fileID: 1463083474}
