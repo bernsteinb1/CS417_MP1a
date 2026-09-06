@@ -5,7 +5,7 @@ using Math = System.Math;
 public class Orbit : MonoBehaviour
 {
     Vector3 velocity;
-    const float gravity = 5f;
+    const float gravity = 25f;
     Transform t;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
