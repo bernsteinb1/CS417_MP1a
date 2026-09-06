@@ -6431,8 +6431,6 @@ GameObject:
   - component: {fileID: 1231329511}
   - component: {fileID: 1231329510}
   - component: {fileID: 1231329509}
-  - component: {fileID: 1231329513}
-  - component: {fileID: 1231329512}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -6550,34 +6548,6 @@ Transform:
   - {fileID: 1886062004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1231329512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231329508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28044733819d4779a2f12535e43c8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeLight
-  button: {fileID: 0}
-  light: {fileID: 0}
---- !u!114 &1231329513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231329508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28044733819d4779a2f12535e43c8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeLight
-  button: {fileID: 0}
-  light: {fileID: 0}
 --- !u!1 &1233811367
 GameObject:
   m_ObjectHideFlags: 0
@@ -7379,7 +7349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28044733819d4779a2f12535e43c8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeLight
-  button: {fileID: 5113088590926889233, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  button: {fileID: -631344258065148156, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
   light: {fileID: 1231329510}
 --- !u!1 &1920256824
 GameObject:

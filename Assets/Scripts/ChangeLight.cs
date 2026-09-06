@@ -12,7 +12,7 @@ public class ChangeLight : MonoBehaviour
         button.action.Enable();
         button.action.performed += (ctx) =>
         {
-            light.color = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
+            light.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         };
     }
 

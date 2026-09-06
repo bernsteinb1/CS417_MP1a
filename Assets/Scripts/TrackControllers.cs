@@ -55,6 +55,11 @@ public class TrackControllers : MonoBehaviour
     {
         return rightRot;
     }
+    
+    public Vector3 getRightPosition()
+    {
+        return rightPos;
+    }
 
     // Update is called once per frame
     void Update()

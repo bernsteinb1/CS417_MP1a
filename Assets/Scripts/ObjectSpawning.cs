@@ -8,9 +8,9 @@ public class ObjectSpawning : MonoBehaviour
     public InputActionReference spawnButton;
     public InputActionReference clearButton;
     public TrackControllers track;
-    private List<GameObject> spawnedObjects;
-    private List<Vector3> velocities;
-    private List <float> gravities;
+    private List<GameObject> spawnedObjects = new();
+    private List<Vector3> velocities = new();
+    private List <float> gravities = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,10 +19,11 @@ public class ObjectSpawning : MonoBehaviour
         {
             GameObject cube = Resources.Load<GameObject>("Cube");
             RaycastHit target = track.getRightRay();
-            spawnedObjects.Add(Instantiate(cube, target.point, Quaternion.identity));
             float gravity = Random.Range(3f, 50f);
+            Vector3 position = track.getRightPosition();
+            spawnedObjects.Add(Instantiate(cube, position, Quaternion.identity));
             gravities.Add(gravity);
-            velocities.Add(getStartVelocity(target.point, track.getRightOrientation(), gravity));
+            velocities.Add(getStartVelocity(position, track.getRightOrientation(), gravity));
         };
         clearButton.action.Enable();
         clearButton.action.performed += (ctx) =>
@@ -39,14 +40,15 @@ public class ObjectSpawning : MonoBehaviour
 
     Vector3 getStartVelocity(Vector3 position, Vector3 rotation, float gravity)
     {
+        // Calculate Orthogonal vector using Gram-Schmidt process
         float distance = (float) Math.Sqrt(Math.Pow(position.x, 2) + Math.Pow(position.y - 7.5, 2) + Math.Pow(position.z, 2));
-        float xComp = -position.x;
-        float yComp = -(position.y - 7.5f);
-        float zComp = -position.z;
         float vel = (float) Math.Sqrt(gravity / distance);
 
-        float z = (-xComp * rotation.x + -yComp * rotation.y) / zComp;
-        Vector3 v = new(rotation.x, rotation.y, z);
+        Vector3 remove = new(-position.x, -(position.y - 7.5f), -position.z);
+        Vector3 proj = Vector3.Dot(remove, rotation) / Vector3.Dot(remove, remove) * remove;
+
+        // v is the velocity -- should have magnitude vel and be orthogonal to the vector from position to orbit point
+        Vector3 v = rotation - proj;
         v /= v.magnitude;
         v *= vel;
         return v;
