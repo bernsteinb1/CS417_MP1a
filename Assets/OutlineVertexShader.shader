@@ -40,11 +40,13 @@ Shader "Custom/OutlineVertexShader"
             {
                 float4 positionOS : POSITION;
                 float3 normalOS : NORMAL;
+                UNITY_VERTEX_INPUT_INSTANCE_ID 
             };
 
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION;
+                UNITY_VERTEX_OUTPUT_STEREO 
             };
 
             TEXTURE2D(_BaseMap);
@@ -58,6 +60,9 @@ Shader "Custom/OutlineVertexShader"
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
+                UNITY_SETUP_INSTANCE_ID(IN); // ◄ ADD THIS
+                ZERO_INITIALIZE(Varyings, OUT); // ◄ ADD THIS
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUTPUT); // ◄ ADD THIS
                 float3 extrudedPosOS = IN.positionOS.xyz + (IN.normalOS * _OutlineThickness);
                 OUT.positionHCS = TransformObjectToHClip(extrudedPosOS);
                 return OUT;
@@ -65,6 +70,7 @@ Shader "Custom/OutlineVertexShader"
 
             half4 frag(Varyings IN) : SV_Target
             {
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(IN);
                 return _OutlineColor;
             }
             ENDHLSL

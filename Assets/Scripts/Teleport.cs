@@ -13,9 +13,9 @@ public class Teleport : MonoBehaviour
         telButton.action.Enable();
         telButton.action.performed += (ctx) => {
             if (!inSkybox) 
-                xr.MoveCameraToWorldLocation(new(0, 26, 0));
+                xr.MoveCameraToWorldLocation(new(0, 28, 0));
             else
-                xr.MoveCameraToWorldLocation(new(0, 1, 0));
+                xr.MoveCameraToWorldLocation(new(0, 3, 0));
             inSkybox = !inSkybox;
         };
     }
